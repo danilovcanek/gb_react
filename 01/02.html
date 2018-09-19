@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		
+		function calculateArea(){
+			let obj = {};
+			obj.input = arguments;
+			console.log(arguments.length);
+			switch(arguments.length){
+				case 0:
+					obj.area = 0;
+					obj.figure = 'dot';
+					break;
+				case 1:
+					obj.area = arguments[0] * arguments[0];
+					obj.figure = 'square';
+					break;
+				case 2:
+					obj.area = arguments[0] * arguments[1];
+					obj.figure = 'rectangle';
+					break;
+				case 3:
+					let p = (arguments[0] + arguments[1] + arguments[2])/2;
+					obj.area = Math.sqrt(p * (p - arguments[0]) * (p - arguments[1]) * (p - arguments[2]));
+					if(!isNaN(obj.area)){
+						obj.figure = 'triangle';
+					} else {
+						obj.figure = 'impossible triangle';	
+					}
+					break;					
+				default:
+					obj.figure = 'unknown';
+			}
+
+			return obj;
+		}
+
+		console.log(calculateArea());
+		console.log(calculateArea(5));
+		console.log(calculateArea(5,10));
+		console.log(calculateArea(5,10,1));
+		console.log(calculateArea(5,10,6));
+		console.log(calculateArea(5,10,6,5));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
