@@ -3,34 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-    <script>
-        function* generator() {
-          obj = {};
-          obj.name = prompt("Name");
-          yield 'name';
-          obj.age = prompt("Age");
-          yield 'age';
-          obj.sex = prompt("Sex");
-          yield 'sex';
-          return obj;
-        }
+  <script>
+      function* generator() {
+        obj = {};
+        obj.name = prompt("Name");
+        yield 'name';
+        obj.age = prompt("Age");
+        yield 'age';
+        obj.sex = prompt("Sex");
+        yield 'sex';
+        return obj;
+      }
 
-        let myGen = generator();
+      let myGen = generator();
 
-        let state = myGen.next();
-        console.log(state);
+      let state = myGen.next();
+      console.log(state);
 
-        state = myGen.next();
-        console.log(state);
+      state = myGen.next();
+      console.log(state);
 
-        state = myGen.next();
-        console.log(state);
+      state = myGen.next();
+      console.log(state);
 
-        state = myGen.next();
-        console.log(state);
+      state = myGen.next();
+      console.log(state);
 
-        console.log(myGen);
-    </script> 
+      console.log(myGen);
+  </script> 
 </head>
 <body>
   

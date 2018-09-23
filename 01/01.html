@@ -7,7 +7,7 @@
     
     function loop (times, callback){
       // console.log("times = " + times + ", callback = " + callback);
-      if((times != 0) && (callback !== undefined)){
+      if((times != 0) && (typeof(callback) == "function")){
         for (let i = 0; i < times; i++) {
           callback();
         }

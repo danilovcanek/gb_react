@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <script>
-    class human{
+    class Human{
       constructor(name, age, dateOfBirdth){
         this.name = name;
         this.age = age;
@@ -17,7 +17,7 @@
       }
     }
 
-    class employee extends human{
+    class Employee extends Human{
       constructor(name, age, dateOfBirdth, salary, department){
         super(name, age, dateOfBirdth);
         this.salary = salary;
@@ -30,7 +30,7 @@
       }
     }
 
-    class manager extends employee{
+    class Manager extends Employee{
       constructor(name, age, dateOfBirdth, salary, department){
         super(name, age, dateOfBirdth, salary, department);
         this.subordinates = [];
@@ -68,17 +68,21 @@
       }
     }
 
-    class developer extends employee{
+    class Developer extends Employee{
       constructor(name, age, dateOfBirdth, salary, department, manager){
         super(name, age, dateOfBirdth, salary, department);
-        this.manager = manager;
+        if(manager instanceof Manager){
+          this.manager = manager;
+        }
       }
 
       setManager(manager){
-        this.manager.delSubordinate(this);
-        this.manager = manager;
-        this.manager.addSubordinate(this);
-        this.department = this.manager.department;
+        if(manager instanceof Manager){
+          this.manager.delSubordinate(this);
+          this.manager = manager;
+          this.manager.addSubordinate(this);
+          this.department = this.manager.department;
+        }
       }
 
       displayInfo(){
@@ -87,21 +91,21 @@
       }
     }
 
-    let human1 = new human('Olga', 25, '01.01.2018');
+    let human1 = new Human('Olga', 25, '01.01.2018');
     console.log(human1.displayInfo());
-    let employee1 = new employee('Nick', 25, '01.01.2018', 55555, "dep0");
+    let employee1 = new Employee('Nick', 25, '01.01.2018', 55555, "dep0");
     console.log(employee1.displayInfo());   
 
-    let manager1 = new manager('Anna', 25, '01.01.2018', 66666, "dep0");
+    let manager1 = new Manager('Anna', 25, '01.01.2018', 66666, "dep0");
     console.log(manager1.displayInfo());   
-    let manager2 = new manager('Bet', 25, '11.11.2018', 66666, "dep1");
+    let manager2 = new Manager('Bet', 25, '11.11.2018', 66666, "dep1");
     console.log(manager2.displayInfo());   
 
-    let developer1 = new developer('Saimon', 25, '03.03.2013', 55555, "dep0", manager1);
+    let developer1 = new Developer('Saimon', 25, '03.03.2013', 55555, "dep0", manager1);
     console.log(developer1.displayInfo());  
     manager1.addSubordinate(developer1);
     console.log(manager1.displayInfo());  
-    let developer2 = new developer('Poll', 25, '03.03.2013', 55555, "dep0", manager1);
+    let developer2 = new Developer('Poll', 25, '03.03.2013', 55555, "dep0", manager1);
     console.log(developer2.displayInfo());  
     manager1.addSubordinate(developer2);
     console.log(manager1.displayInfo());  
