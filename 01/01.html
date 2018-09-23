@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    
+    function loop (times, callback){
+      // console.log("times = " + times + ", callback = " + callback);
+      if((times != 0) && (typeof(callback) == "function")){
+        for (let i = 0; i < times; i++) {
+          callback();
+        }
+      }
+    }
+
+    function print (){
+      console.log("print");
+    }
+
+    loop(10, print);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
