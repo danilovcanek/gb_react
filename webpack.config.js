@@ -47,6 +47,20 @@ module.exports = {
             {
                 test: /\.svg$/,
                 loader: "url-loader?limit=10000&mimetype=application/svg+xml&name=./fonts/[name].[ext]"
+            },
+            {
+                test: /\.(jpg|png|svg)$/,
+                loader: 'url-loader',
+                options: {
+                  limit: 25000,
+                },
+            },
+            {
+                test: /\.(jpg|png|svg)$/,
+                loader: 'file-loader',
+                options: {
+                  name: '[path][name]-[hash:8].[ext]',
+                },
             }
         ]
     },

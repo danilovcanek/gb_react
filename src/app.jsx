@@ -1,11 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './app/styles/main.css';
 import Menu from './app/components/Menu';
-import HeaderLogo from './app/components/HeaderLogo'
-import Button from './app/components/Button'
+import Header from './app/components/Header';
+import ContentInto from './app/components/ContentInto';
+import MyLargeModal from './app/components/MyLargeModal';
+// import Button from 'react-bootstrap';
 
 class App extends React.Component
 {
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      lgShow: false
+    };
+  }
+
   render(){
     const menuItems = [
       {href: "/", title: "Home"},
@@ -15,15 +26,34 @@ class App extends React.Component
       {href: "/hireus", title: "Hire us"},
     ];
 
+    let lgClose = () => this.setState({ lgShow: false });
+
     //JSX
     return (
       <div>
-        <Menu items={menuItems} activeNumber={1} className={"side-nav"}></Menu>
-        <HeaderLogo></HeaderLogo>
-        <Button className="header--cta cta" arrowEnable={1}>AAA</Button>
+        <div className="perspective effect-rotate-left">
+          <div className="container">
+            <div id="viewport" class="l-viewport">
+              <div class="l-wrapper">
+                <Header />
+                <Menu items={menuItems} activeNumber={0} className="side-nav"/>
+                <ul class="l-main-content main-content">
+                  <ContentInto className="section--is-active"/>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <MyLargeModal show={this.state.lgShow} onHide={lgClose} />
       </div>
     )   
   }
+
+  componentDidMount()
+  {
+    console.log('4. componentDidMount()');
+    this.setState({ lgShow: true })
+  }  
 }
 
 //Выводим содержимое компонента в DOM
