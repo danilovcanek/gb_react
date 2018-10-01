@@ -438,9 +438,9 @@
 /***/ }),
 
 /***/ 329:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "data:application/svg+xml;base64,bW9kdWxlLmV4cG9ydHMgPSAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxiVzlrZFd4bExtVjRjRzl5ZEhNZ1BTQmZYM2RsWW5CaFkydGZjSFZpYkdsalgzQmhkR2hmWHlBcklDSTRPVGc0T1RZNE9ERTBOMkprTnpVM05XUTJNekkzTVRZd1pEWTBaVGMyTUM1emRtY2lPdz09Ig=="
+	module.exports = __webpack_require__.p + "./fonts/glyphicons-halflings-regular.svg";
 
 /***/ }),
 
