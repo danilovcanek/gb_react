@@ -16,13 +16,13 @@ class ContentInto extends React.Component
           <div class="intro--banner">
             <h1>Your next<br />interactive<br />experience</h1>
             <Button className="cta" arrowEnable={1}>Hire us</Button>
-            <img src={Introduction_visual} alt="Welcome" />     
-            <div class="intro--options">
-              <IntroArticle href="/" header="Metiew &amp; Smith" preview="Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do."/>
-              <IntroArticle href="/" header="Fantasy interactive" preview="Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do."/>
-              <IntroArticle href="/" header="Paul &amp; shark" preview="Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do."/>
-            </div>                   
-          </div>
+            <img src={Introduction_visual} alt="Welcome" />                
+          </div>     
+          <div class="intro--options">
+            <IntroArticle href="/" header="Metiew &amp; Smith" preview="Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do."/>
+            <IntroArticle href="/" header="Fantasy interactive" preview="Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do."/>
+            <IntroArticle href="/" header="Paul &amp; shark" preview="Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do."/>
+          </div>   
         </div>
       </li>
     );

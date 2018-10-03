@@ -55,13 +55,6 @@ module.exports = {
                   limit: 25000,
                 },
             }
-            // {
-            //     test: /\.(jpg|png|svg)$/,
-            //     loader: 'file-loader',
-            //     options: {
-            //       name: '[path][name]-[hash:8].[ext]',
-            //     },
-            // }
         ]
     },
     resolve: {
