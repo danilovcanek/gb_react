@@ -19,13 +19,16 @@ export default class Posts extends React.Component {
 
     newPost()
     {
-        // let body = 'Текст вновь добавленного поста';
-        let body = $("#body").val();
-        let userId = $("#userId").val();
-        let title = $("#title").val();
+        let body = this.refs.body.value;
+        let userId = this.refs.userId.value;
+        let title = this.refs.title.value;
 
         //Action
         addPost(title, userId, body);
+
+        this.refs.body.value = "";
+        this.refs.userId.value = "";
+        this.refs.title.value = "";
     }
 
     onPostChange(posts){
@@ -50,19 +53,19 @@ export default class Posts extends React.Component {
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="userId">UserId:</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="userId" placeholder="Enter userId" name="userId"/>
+                    <input type="text" class="form-control" id="userId" placeholder="Enter userId" name="userId" ref="userId"/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="pwd">Title:</label>
                   <div class="col-sm-10">          
-                    <input type="text" class="form-control" id="title" placeholder="Enter title" name="title"/>
+                    <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" ref="title"/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="body">Body:</label>
                   <div class="col-sm-10"> 
-                    <textarea class="form-control" rows="5" id="body" placeholder="Enter body"></textarea>
+                    <textarea class="form-control" rows="5" id="body" placeholder="Enter body" ref="body"></textarea>
                   </div>
                 </div>                
               </form>

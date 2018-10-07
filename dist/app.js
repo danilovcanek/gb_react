@@ -31005,13 +31005,16 @@
 	    _createClass(Posts, [{
 	        key: 'newPost',
 	        value: function newPost() {
-	            // let body = 'Текст вновь добавленного поста';
-	            var body = $("#body").val();
-	            var userId = $("#userId").val();
-	            var title = $("#title").val();
+	            var body = this.refs.body.value;
+	            var userId = this.refs.userId.value;
+	            var title = this.refs.title.value;
 
 	            //Action
 	            (0, _postActions.addPost)(title, userId, body);
+
+	            this.refs.body.value = "";
+	            this.refs.userId.value = "";
+	            this.refs.title.value = "";
 	        }
 	    }, {
 	        key: 'onPostChange',
@@ -31049,7 +31052,7 @@
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'col-sm-10' },
-	                            _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'userId', placeholder: 'Enter userId', name: 'userId' })
+	                            _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'userId', placeholder: 'Enter userId', name: 'userId', ref: 'userId' })
 	                        )
 	                    ),
 	                    _react2.default.createElement(
@@ -31063,7 +31066,7 @@
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'col-sm-10' },
-	                            _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'title', placeholder: 'Enter title', name: 'title' })
+	                            _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'title', placeholder: 'Enter title', name: 'title', ref: 'title' })
 	                        )
 	                    ),
 	                    _react2.default.createElement(
@@ -31077,7 +31080,7 @@
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'col-sm-10' },
-	                            _react2.default.createElement('textarea', { className: 'form-control', rows: '5', id: 'body', placeholder: 'Enter body' })
+	                            _react2.default.createElement('textarea', { className: 'form-control', rows: '5', id: 'body', placeholder: 'Enter body', ref: 'body' })
 	                        )
 	                    )
 	                ),
